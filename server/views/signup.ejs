@@ -1,0 +1,43 @@
+<!-- views/login.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>Callbox | Signup</title>
+</head>
+<body>
+<div class="container">
+
+    <div class="content">
+
+        <h1 class="title is-1"><span class="mdi mdi-login-variant"></span>Signup</h1>
+
+        <!-- show any messages that come back with authentication -->
+        <% if (message.length > 0) { %>
+            <div class="box has-text-danger"><%= message %></div>
+        <% } %>
+        <!-- LOGIN FORM -->
+        <form action="/signup" method="post">
+            <div class="field">
+                <div class="control">
+                    <label class="label">Email</label>
+                    <input class="input" name="email" required="required" type="email" autocomplete="email_login" >
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label>Password</label>
+                    <input type="password" class="input" name="password" required="required" type="password" autocomplete="password_login">
+                </div>
+            </div>
+            <button type="submit" class="button is-primary is-fullwidth">SIGN UP</button>
+        </form>
+
+        <hr>
+
+        <p>Need an account? <a href="/login">login</a></p>
+        <p>Or go <a href="/">home</a>.</p>
+
+    </div>
+</div>
+</body>
+</html>

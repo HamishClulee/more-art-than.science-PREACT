@@ -1,0 +1,29 @@
+<!-- views/login.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>Call Box | Login</title>
+</head>
+    <body>
+        <div class="container">
+            <h1>Login</h1>
+            <div class="stand">
+                <div class="outer-screen">
+                    <div class="inner-screen">
+                        <!-- show any messages that come back with authentication -->
+                        <% if (message.length > 0) { %>
+                        <div class="box has-text-danger"><%= message %></div>
+                        <% } %>
+                        <form class="form" action="/login" method="post">
+                            <label class="label">Email</label>
+                            <input class="input" class="zocial-dribbble" name="email" required="required" type="email" autocomplete="email_login" >
+                            <label>Password</label>
+                            <input type="password" class="input" name="password" required="required" type="password" autocomplete="password_login">
+                            <button type="submit" class="button is-primary is-fullwidth">LOGIN</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
