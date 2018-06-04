@@ -1,17 +1,36 @@
 @charset "UTF-8"
+// colors
+$primary-color-dark:   #D32F2F
+$primary-color:        #F44336
+$primary-color-light:  #FFCDD2
+$primary-color-text:   #FFFFFF
+$accent-color:         #03A9F4
+$primary-text-color:   #212121
+$secondary-text-color: #757575
+$divider-color:        #BDBDBD
+
 // Font Variables
 $heading-font: 'Exo', sans-serif
 $body-font: 'Quicksand', sans-serif
 
 // Styles
+html
+  margin: 0
+  padding: 0
+
 body
   font-family: $body-font
   font-weight: normal
+  margin: 0
+  padding: 0
 
 h1, h2, h3, h4, h5, h6
   font-family: $heading-font
   font-weight: normal
   text-transform: uppercase
+
+.heading-light
+  color: $primary-color-text
 
 .page-container
   margin-top: -40px
@@ -24,18 +43,10 @@ h1, h2, h3, h4, h5, h6
   height: 100vh
   flex-direction: column
 
-nav
-  a
-    padding: 20px
-
-.header
+.header-container
+  height: 30vh
+  background-color: $primary-color-dark
   display: flex
   align-items: center
   justify-content: center
-
-.main-app-container
-  padding: 5%
-
-.page__home
-  button
-    margin: 10%
+  flex-direction: column

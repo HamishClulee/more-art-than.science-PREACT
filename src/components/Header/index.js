@@ -2,7 +2,8 @@ import { h } from 'preact'
 
 const Header = () => (
   <header className="header-container">
-    <h6>A thing that a header should contain</h6>
+      <h1 className="heading-light">Welcome to M~A~T~S</h1>
+      <h6 className="heading-light">Home of Hamish Clulee</h6>
   </header>  
 )
 
