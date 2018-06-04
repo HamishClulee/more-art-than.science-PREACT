@@ -34,13 +34,13 @@ const unsubscribe = instance.onSnapshot(console.log);
 instance.setLastName('Clancy');
 
 // views turn into cached getters
-console.log(instance.fullname); // 'Tom Clancy'
+// console.log(instance.fullname); // 'Tom Clancy'
 
 // nested models also bubble up events to the parent
-instance.setNested(Person());
+// instance.setNested(Person());
 
-instance.nested.setFirstName('wow');
+// instance.nested.setFirstName('wow');
 
 // you can get a snapshot of the state at any time
 // { firstname: 'Tom', lastname: 'Clancy',  nested: { firstname: 'wow', lastname: null, nested: null } }
-console.log(instance.getSnapshot());
+// console.log(instance.getSnapshot());

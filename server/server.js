@@ -31,7 +31,7 @@ app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors({
-    origin: process.env.NODE_ENV === 'development' ? 'http://localhost:8080' : '',
+    origin: process.env.NODE_ENV === 'development' ? 'http://localhost:1234' : '',
     credentials: true
 }))
 app.use(session({
@@ -55,6 +55,13 @@ app.use(flash())
 app.set('view engine', 'ejs')
 
 // ROUTES =====================================================================
+app.get('/test', (req, res) => {
+    return res.status(200).send({
+        'status': 200,
+        'message': 'Fetch ok! good boy!'
+    })
+})
+
 // AUTH ===================================================
 app.use('/', require('./app/routes/auth'))
 // API ====================================================
