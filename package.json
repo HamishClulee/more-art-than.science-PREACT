@@ -1,7 +1,7 @@
 {
-  "name": "parcel-preact-unistore-starter",
+  "name": "peronsal-site",
   "version": "0.0.1",
-  "description": "Starter pack for lightning-fast prototyping and small/medium size project structures",
+  "description": "Things built by and thought about by Hamish Clulee",
   "main": "index.js",
   "engines": {
     "node": ">=8.0.0",
@@ -16,11 +16,13 @@
   "author": "Baris Guler <harderworking.class@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "parket": "^0.4.2",
     "preact": "^8.2.7",
     "preact-compat": "^3.17.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.3",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-preact": "^1.1.0",
     "node-sass": "^4.9.0",

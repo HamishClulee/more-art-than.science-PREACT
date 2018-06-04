@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // configuration ==============================================================
-require('./config/passport')(passport)
+// require('./config/passport')(passport)
 mongoose.Promise = global.Promise
 mongoose.connect(configDB.url)
 app.use(compression())
