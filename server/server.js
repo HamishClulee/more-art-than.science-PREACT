@@ -55,12 +55,6 @@ app.use(flash())
 app.set('view engine', 'ejs')
 
 // ROUTES =====================================================================
-app.get('/test', (req, res) => {
-    return res.status(200).send({
-        'status': 200,
-        'message': 'Fetch ok! good boy!'
-    })
-})
 
 // AUTH ===================================================
 app.use('/', require('./app/routes/auth'))

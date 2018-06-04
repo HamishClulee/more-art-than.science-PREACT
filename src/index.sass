@@ -1,10 +1,12 @@
 @charset "UTF-8"
+@import "./sass/index.scss"
+
 // colors
 $primary-color-dark:   #D32F2F
 $primary-color:        #F44336
 $primary-color-light:  #FFCDD2
 $primary-color-text:   #FFFFFF
-$accent-color:         #03A9F4
+$accent-color:         #009688
 $primary-text-color:   #212121
 $secondary-text-color: #757575
 $divider-color:        #BDBDBD
@@ -14,9 +16,13 @@ $heading-font: 'Exo', sans-serif
 $body-font: 'Quicksand', sans-serif
 
 // Styles
+*, *:before, *:after
+  box-sizing: inherit
+
 html
   margin: 0
   padding: 0
+  box-sizing: border-box
 
 body
   font-family: $body-font
@@ -28,6 +34,10 @@ h1, h2, h3, h4, h5, h6
   font-family: $heading-font
   font-weight: normal
   text-transform: uppercase
+
+.material-icons
+  text-rendering: optimizeLegibility
+  font-feature-settings: 'liga'
 
 .heading-light
   color: $primary-color-text
@@ -52,6 +62,10 @@ h1, h2, h3, h4, h5, h6
   justify-content: center
   flex-direction: column
 
+.float-header-button
+  position: absolute
+  top: 27vh
+
 .home-tab-wrapper
   display: inline-grid
   margin-left: auto
@@ -62,3 +76,5 @@ h1, h2, h3, h4, h5, h6
 .home-tab-item
   grid-row: 1
   text-align: center
+  border-bottom: 2px solid $accent-color
+  margin: 0 10% 2% 10%
