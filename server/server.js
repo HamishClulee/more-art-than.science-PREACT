@@ -17,9 +17,9 @@ let _static = express.static('public')
 let compression = require('compression')
 
 // logging ====================================================================
-if (process.env.NODE_ENV === 'production') {
-    app.use(require('morgan')('combined'))
-}
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(require('morgan')('combined'))
+// }
 
 // configuration ==============================================================
 // require('./config/passport')(passport)
@@ -33,24 +33,24 @@ app.use(bodyParser.urlencoded({ extended: true }))
 //     origin: process.env.NODE_ENV === 'development' ? 'http://localhost:1234' : 'https://more-art-than.science',
 //     credentials: true
 // }))
-app.use(session({
-    secret: '*&^*&JUKIHKJHG*&YIUHFIUEW*^F*&GHKJ',
-    name: 'mat-auth-token',
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
-    proxy: true,
-    resave: true,
-    saveUninitialized: true,
-    maxAge: 7200000,
-    secure: process.env.NODE_ENV === 'development' ? false : true
-}))
+// app.use(session({
+//     secret: '*&^*&JUKIHKJHG*&YIUHFIUEW*^F*&GHKJ',
+//     name: 'mat-auth-token',
+//     store: new MongoStore({ mongooseConnection: mongoose.connection }),
+//     proxy: true,
+//     resave: true,
+//     saveUninitialized: true,
+//     maxAge: 7200000,
+//     secure: process.env.NODE_ENV === 'development' ? false : true
+// }))
 
-if (app.get('env') === 'production') {
-    app.set('trust proxy', 1)
-}
+// if (app.get('env') === 'production') {
+//     app.set('trust proxy', 1)
+// }
 
-app.use(passport.initialize())
-app.use(passport.session())
-app.use(flash())
+// app.use(passport.initialize())
+// app.use(passport.session())
+// app.use(flash())
 app.set('view engine', 'ejs')
 
 // ROUTES =====================================================================
