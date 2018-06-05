@@ -10,7 +10,7 @@ mkdir $PWD/server/public
 cp -a $PWD/dist/. $PWD/server/public
 echo "---------------------- Pushing to GIT. -----------------------------------------"
 git add .
-MSG="Deployed: $DATE"
+MSG=". Deployed: $DATE"
 git commit -m "$1 $MSG"
 git push
 echo "---------------------- Deploying to more-art-than.science. ---------------------"
