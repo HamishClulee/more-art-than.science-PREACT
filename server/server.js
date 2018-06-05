@@ -7,13 +7,12 @@ let colors = require('colors')
 let morgan = require('morgan')
 let cookieParser = require('cookie-parser')
 let bodyParser = require('body-parser')
-let cors = require('cors')
+// let cors = require('cors')
 let configDB = require('./config/database.js')
 let passport = require('passport')
 let flash = require('connect-flash')
 let session = require('express-session')
 let MongoStore = require('connect-mongo')(session)
-let history = require('connect-history-api-fallback')
 let _static = express.static('public')
 let compression = require('compression')
 
@@ -35,8 +34,8 @@ app.use(cors({
     credentials: true
 }))
 app.use(session({
-    secret: 'TEMPORARY_SECRET_FOR_DEV_PURPOSES',
-    name: 'auth_call_box',
+    secret: '*&^*&JUKIHKJHG*&YIUHFIUEW*^F*&GHKJ',
+    name: 'mat-auth-token',
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
     proxy: true,
     resave: true,
@@ -63,10 +62,10 @@ app.use('/', require('./app/routes/auth'))
 app.use(_static)
 
 // SETTINGS ===================================================================
-app.use(history({
-    verbose: true,
-    disableDotRule: true
-}))
+// app.use(history({
+//     verbose: true,
+//     disableDotRule: true
+// }))
 app.get('*', _static)
 
 // launch =====================================================================
