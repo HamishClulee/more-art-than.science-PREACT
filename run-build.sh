@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# if [ -z "$1" ]; then
+#    echo "-------------- enter a commit message --------------"
+#    exit 1
 echo "---------------------- Building locally. ---------------------------------------"
 rm -R $PWD/dist/
 mkdir $PWD/dist/
@@ -10,8 +13,8 @@ mkdir $PWD/server/public
 cp -a $PWD/dist/. $PWD/server/public
 echo "---------------------- Pushing to GIT. -----------------------------------------"
 git add .
-MSG="New Build Deployed. $DATE"
-git commit -m "$MSG"
+MSG="Deployed: $DATE"
+git commit -m "$1 $MSG"
 git push
 echo "---------------------- Deploying to more-art-than.science. ---------------------"
 ssh hamishclulee@206.189.83.217 'cd /var/www/more-art-than.science && git reset --hard && git pull && sudo systemctl restart mats.service'
