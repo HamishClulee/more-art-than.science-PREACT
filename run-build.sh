@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# if [ -z "$1" ]; then
-#    echo "-------------- enter a commit message --------------"
-#    exit 1
 echo "---------------------- Building locally. ---------------------------------------"
 rm -R $PWD/dist/
 mkdir $PWD/dist/
