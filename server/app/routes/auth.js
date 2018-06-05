@@ -13,74 +13,20 @@ router.post('/login', passport.authenticate('local-login', {
     failureFlash: true // allow flash messages
 }))
 
-// router.get('/auth/facebook', passport.authenticate('facebook', {
-//     scope: ['public_profile', 'email']
-// }))
-
-// handle the callback after facebook has authenticated the user
-// router.get('/auth/facebook/callback', passport.authenticate('facebook', {
-//     successRedirect: '/',
-//     failureRedirect: '/'
-// }))
-
-// GOOGLE =============================
-// router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }))
-
-// the callback after google has authenticated the user
-// router.get('/auth/google/callback',
-//     passport.authenticate('google', {
-//         successRedirect: '/',
-//         failureRedirect: '/'
-//     })
-// )
-
 // SIGNUP =============================
-// router.get('/signup', (req, res) => {
-//     res.render('signup.ejs', { message: req.flash('signupMessage') })
-// })
-// router.post('/signup', passport.authenticate('local-signup', {
-//     successRedirect: '/account', // redirect to the secure profile section
-//     failureRedirect: '/signup', // redirect back to the signup page if there is an error
-//     failureFlash: true // allow flash messages
-// }))
+router.get('/signup', (req, res) => {
+    res.render('signup.ejs', { message: req.flash('signupMessage') })
+})
+router.post('/signup', passport.authenticate('local-signup', {
+    successRedirect: '/account', // redirect to the secure profile section
+    failureRedirect: '/signup', // redirect back to the signup page if there is an error
+    failureFlash: true // allow flash messages
+}))
 router.get('/profile', UTIL.isLoggedIn, (req, res) => {
     res.render('profile.ejs', {
         user: req.user // get the user out of session and pass to template
     })
 })
-
-// router.get('/connect/local', function (req, res) {
-//     res.render('connect-local.ejs', { message: req.flash('loginMessage') })
-// })
-// router.post('/connect/local', passport.authenticate('local-signup', {
-//     successRedirect: '/profile', // redirect to the secure profile section
-//     failureRedirect: '/connect/local', // redirect back to the signup page if there is an error
-//     failureFlash: true // allow flash messages
-// }))
-
-// facebook -------------------------------
-
-// send to facebook to do the authentication
-// router.get('/connect/facebook', passport.authorize('facebook', {
-//     scope: ['public_profile', 'email']
-// }))
-
-// handle the callback after facebook has authorized the user
-// router.get('/connect/facebook/callback',
-//     passport.authorize('facebook', {
-//         successRedirect: '/profile',
-//         failureRedirect: '/'
-//     }))
-
-// google ---------------------------------
-// router.get('/connect/google', passport.authorize('google', { scope: ['profile', 'email'] }))
-
-// the callback after google has authorized the user
-// router.get('/connect/google/callback',
-//     passport.authorize('google', {
-//         successRedirect: '/profile',
-//         failureRedirect: '/'
-//     }))
 
 // LOGOUT ==============================
 router.get('/logout', (req, res) => {
