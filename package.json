@@ -9,7 +9,6 @@
   },
   "scripts": {
     "build": "npx parcel build index.html",
-    "deploy": "bash ./run-build.sh",
     "dev": "bash ./run-dev.sh & parcel index.html",
     "deploy-local": "bash ./run-deploy-local.sh"
   },
