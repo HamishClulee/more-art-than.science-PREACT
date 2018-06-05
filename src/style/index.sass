@@ -1,0 +1,36 @@
+@charset "UTF-8"
+@import "util/variables"
+@import "util/utils"
+// ----------- reset & base ---------------------------------------------------
+html
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  font-family: $body-font
+  font-weight: normal
+  margin: 0
+  padding: 0
+
+h1, h2, h3, h4, h5, h6
+  font-family: $heading-font
+  font-weight: normal
+  text-transform: uppercase
+
+.material-icons
+  text-rendering: optimizeLegibility
+  font-feature-settings: 'liga'
+
+*, *:before, *:after
+  box-sizing: inherit
+
+// ----------- components -----------------------------------------------------
+
+@import "components/buttons"
+@import "components/header"
+@import "components/tabs"
+
+
+
+
