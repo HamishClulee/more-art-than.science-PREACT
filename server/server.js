@@ -9,6 +9,7 @@ let cookieParser = require('cookie-parser')
 let bodyParser = require('body-parser')
 let cors = require('cors')
 let configDB = require('./config/database.js')
+let configSession = require('./config/app')
 let passport = require('passport')
 let flash = require('connect-flash')
 let session = require('express-session')
@@ -23,7 +24,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // configuration ==============================================================
-// require('./config/passport')(passport)
+require('./config/passport')(passport)
 mongoose.Promise = global.Promise
 mongoose.connect(configDB.url)
 app.use(compression())
@@ -35,8 +36,8 @@ app.use(cors({
     credentials: true
 }))
 app.use(session({
-    secret: '*&^*&JUKIHKJHG*&YIUHFIUEW*^F*&GHKJ',
-    name: 'mat-auth-token',
+    secret: configSession.session_secret,
+    name: 'more-art-than.science_token',
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
     proxy: true,
     resave: true,
