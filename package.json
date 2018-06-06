@@ -12,7 +12,7 @@
     "dev": "bash ./run-dev.sh & parcel index.html",
     "deploy-local": "bash ./run-deploy-local.sh"
   },
-  "author": "Baris Guler <harderworking.class@gmail.com>",
+  "author": "Hamish Clulee",
   "license": "MIT",
   "dependencies": {
     "parket": "^0.4.2",
