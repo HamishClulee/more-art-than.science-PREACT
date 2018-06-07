@@ -13,6 +13,7 @@ import Resume from './views/Resume'
 import Work from './views/Work'
 import Blog from './views/Blog'
 
+
 function CanView (props) {
     return <div>
         <Header/>
@@ -32,12 +33,12 @@ function Construction(props) {
     return <UnderConstruction />
 }
 
-const App = (props) => {
-    const isLoggedIn = props.isLoggedIn
-    if (isLoggedIn) {
+const App = (props, state) => {
+    if (props.showMain) {
         return <CanView />
+    } else {
+        return <Construction />
     }
-    return <Construction />
 }
 
 export default App

@@ -38,7 +38,10 @@ router.get('/logout', (req, res) => {
 })
 // CHALLENGE ==================================================================
 router.get('/api/session_challenge', UTIL.isLoggedIn, (req, res) => {
-    res.send('welcome...')
+    res.status(200).send({
+        'code': 'OK1',
+        'message': 'welcome...'
+    })
 })
 
 router.get('/api/admin_challenge', (req, res) => {
