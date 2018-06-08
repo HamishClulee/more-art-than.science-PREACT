@@ -2,7 +2,6 @@ import { h } from 'preact'
 import { Link } from 'preact-router/match';
 import git from '../static/github.svg'
 import linkedIn from '../static/linkdin.svg'
-import border from '../static/image2vector.svg'
 
 const Header = () => (
   <header className="header-container">
