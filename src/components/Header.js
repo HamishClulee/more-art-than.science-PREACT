@@ -1,7 +1,7 @@
 import { h } from 'preact'
 import { Link } from 'preact-router/match';
 import git from '../static/github.svg'
-import linkedIn from '../static/iconmonstr-linkedin-5.svg'
+import linkedIn from '../static/linkdin.svg'
 import border from '../static/image2vector.svg'
 
 const Header = () => (
@@ -28,10 +28,6 @@ const Header = () => (
         <div className="row i2-1"><Link href="/work"><h5>WORK</h5></Link></div>
         <div className="row i2-2"><Link href="/resume"><h5>RESUME</h5></Link></div>
         <div className="row i2-3"><Link href="/tech"><h5>TECH</h5></Link></div>
-    </div>
-
-    <div className="border-container">
-        <img src={ border } height="180" />
     </div>
   </header>
 )
