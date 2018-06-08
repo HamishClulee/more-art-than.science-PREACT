@@ -1,9 +1,7 @@
 import Router from 'preact-router'
 import { h, Component, render } from 'preact'
+
 // Components
-import Header from './components/Header'
-import NavTabs from './components/NavTabs'
-import Footer from './components/Footer'
 import UnderConstruction from './components/UnderConstruction'
 
 // Views
@@ -16,8 +14,6 @@ import Blog from './views/Blog'
 
 function CanView (props) {
     return <div>
-        <Header/>
-        <NavTabs />
         <Router>
             <Home path="/" />
             <Tech path="/tech" />
@@ -25,7 +21,6 @@ function CanView (props) {
             <Work path="/work" />
             <Blog path="blog" />
         </Router>
-        <Footer />
     </div>
 }
 

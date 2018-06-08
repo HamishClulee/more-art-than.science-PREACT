@@ -9,7 +9,7 @@ router.get('/login', (req, res) => {
     res.render('login.ejs', { message: req.flash('loginMessage') })
 })
 router.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/profile',
+    successRedirect: '/',
     failureRedirect: '/signup',
     failureFlash: true
 }))
