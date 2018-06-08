@@ -15,14 +15,14 @@ router.post('/login', passport.authenticate('local-login', {
 }))
 
 // SIGNUP =====================================================================
-router.get('/signup', (req, res) => {
-    res.render('signup.ejs', { message: req.flash('signupMessage') })
-})
-router.post('/signup', passport.authenticate('local-signup', {
-    successRedirect: '/profile',
-    failureRedirect: '/',
-    failureFlash: true
-}))
+// router.get('/signup', (req, res) => {
+//     res.render('signup.ejs', { message: req.flash('signupMessage') })
+// })
+// router.post('/signup', passport.authenticate('local-signup', {
+//     successRedirect: '/profile',
+//     failureRedirect: '/',
+//     failureFlash: true
+// }))
 
 // ADMIN / PROFILE ============================================================
 router.get('/profile', UTIL.isLoggedIn, (req, res) => {
