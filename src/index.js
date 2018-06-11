@@ -6,6 +6,13 @@ import './style/index.sass'
 import './style/components/svg.scss'
 import store from './store/'
 
+render(
+    <div id="app">
+        <App />
+    </div>,
+    document.body
+)
+
 anime.timeline({loop: true})
     .add({
         targets: '.ml15 .word',
@@ -23,10 +30,3 @@ anime.timeline({loop: true})
     easing: "easeOutExpo",
     delay: 1000
 });
-
-render(
-    <div id="app">
-        <App />
-    </div>,
-    document.body
-)
