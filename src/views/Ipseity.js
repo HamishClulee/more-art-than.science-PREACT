@@ -1,6 +1,5 @@
 import { h, render, Component } from 'preact'
 import Footer from '../components/Footer'
-import BackIcon from '../components/BackIcon'
 import anime from "animejs";
 
 module.exports = class Ipseity extends Component {
@@ -22,7 +21,6 @@ module.exports = class Ipseity extends Component {
 
     render(props, state) {
         return <div className="page-container">
-                <BackIcon />
             <h1 className="ml15">
                 <span className="word">Soon</span>
                 <span className="word">Come</span>

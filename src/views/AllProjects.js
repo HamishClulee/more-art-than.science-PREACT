@@ -1,6 +1,5 @@
 import { h, render, Component } from 'preact';
 import Footer from '../components/Footer'
-import BackIcon from '../components/BackIcon'
 module.exports = class AllProjects extends Component {
     // Vue data
     constructor() {
@@ -19,7 +18,6 @@ module.exports = class AllProjects extends Component {
     render(props, state) {
         return <div>
             <div className="page-container">
-                <BackIcon />
                 <h1 className="ml15">
                     <span className="word">Currently</span>
                     <span className="word">Under</span>
