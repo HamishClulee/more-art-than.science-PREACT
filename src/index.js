@@ -1,4 +1,5 @@
 import 'preloadfill'
+import anime from 'animejs'
 import  { h, render } from 'preact'
 import App from './App/'
 import './style/index.sass'
