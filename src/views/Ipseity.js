@@ -7,7 +7,7 @@ module.exports = class Ipseity extends Component {
 
     // Vue mounted
     componentDidMount() {
-        anime.timeline({loop: true})
+        anime.timeline({loop: false})
             .add({
                 targets: '.ml15 .word',
                 scale: [14,1],
@@ -17,13 +17,7 @@ module.exports = class Ipseity extends Component {
                 delay: function(el, i) {
                     return 1000 * i;
                 }
-            }).add({
-            targets: '.ml15',
-            opacity: 0,
-            duration: 3000,
-            easing: "easeOutExpo",
-            delay: 1000
-        });
+            })
     }
 
     render(props, state) {

@@ -11,3 +11,18 @@
   line-height: 1em;
   width: 60vw
 }
+
+.ml16 {
+  color: #402d2d;
+  font-weight: 800;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  overflow: hidden;
+  width: 60vw
+}
+
+.ml16 .letter {
+  display: inline-block;
+  line-height: 1em;
+}

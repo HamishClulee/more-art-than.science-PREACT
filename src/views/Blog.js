@@ -10,25 +10,33 @@ module.exports = class Blog extends Component {
         super()
     }
 
+    wrapInSpans (classToWrap) {
+        let str = ''
+        document.querySelector(classToWrap).innerHTML.split('').forEach(letter => {
+            str += `<span class="letter">${letter}</span>`
+        })
+        document.querySelector(classToWrap).innerHTML = ''
+        document.querySelector(classToWrap).innerHTML = str
+    }
+
     // Vue mounted
     componentDidMount() {
-        anime.timeline({loop: true})
-            .add({
-                targets: '.ml15 .word',
-                scale: [14,1],
-                opacity: [0,1],
-                easing: "easeOutCirc",
-                duration: 1000,
-                delay: function(el, i) {
-                    return 1000 * i;
-                }
-            }).add({
-            targets: '.ml15',
-            opacity: 0,
-            duration: 3000,
+
+        this.wrapInSpans('.one')
+        this.wrapInSpans('.two')
+        this.wrapInSpans('.three')
+        this.wrapInSpans('.four')
+
+        anime.timeline({loop: false})
+        .add({
+            targets: '.ml16 .letter',
+            translateY: [-100, 0],
             easing: "easeOutExpo",
-            delay: 1000
-        });
+            duration: 2200,
+            delay: function(el, i) {
+                return 80 * i;
+            }
+        })
     }
 
     // Vue beforeDestroy
@@ -40,13 +48,10 @@ module.exports = class Blog extends Component {
         return <div>
             <div className="page-container">
                 <BackIcon />
-                <h1 className="ml15">
-                    <span className="word">No</span>
-                    <span className="word">Recent</span>
-                    <span className="word">Posts</span>
-                    <span className="word">To</span>
-                    <span className="word">Display</span>
-                </h1>
+                <h1 className="ml16 one">No</h1>
+                <h1 className="ml16 two">Posts</h1>
+                <h1 className="ml16 three">To</h1>
+                <h1 className="ml16 four">Display</h1>
             </div>
             <Footer />
         </div>;

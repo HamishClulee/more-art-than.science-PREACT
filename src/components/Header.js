@@ -13,23 +13,18 @@ module.exports = class Header extends Component {
 
     // Vue mounted
     componentDidMount() {
-        anime.timeline({loop: true})
-            .add({
-                targets: '.ml15 .word',
-                scale: [14,1],
-                opacity: [0,1],
-                easing: "easeOutCirc",
-                duration: 1000,
-                delay: function(el, i) {
-                    return 1000 * i;
-                }
-            }).add({
-            targets: '.ml15',
-            opacity: 0,
-            duration: 3000,
-            easing: "easeOutExpo",
-            delay: 1000
-        });
+        anime
+        .timeline({loop: false})
+        .add({
+            targets: '.ml15 .word',
+            scale: [14,1],
+            opacity: [0,1],
+            easing: "easeOutCirc",
+            duration: 1000,
+            delay: function(el, i) {
+                return 1000 * i;
+            }
+         })
     }
 
     // Vue beforeDestroy
@@ -50,7 +45,8 @@ module.exports = class Header extends Component {
                     <div className="text-container">
                         <h4>Welcome to M~A~T~S</h4>
                         <h5>Home of Hamish Clulee</h5>
-                        <p>I'm a Web Developer from New Zealand. I'm comfortable anywhere in the stack, but am most commonly found working on front end challenges, especially UI/UX design and build and Front End Tooling.</p>
+                        <p>I'm a Web Developer from New Zealand. It's more than likely you will find me working on the front end. I'm especially passionate about UI/UX design and Front End Ops.</p>
+                        <p><em>Full Stack approved.</em></p>
                         <div className="header-icons-home">
                             <a href="https://github.com/HamishClulee" target="_blank" className="icon-container-item">
                                 <img src={git} height="30"/>
