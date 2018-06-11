@@ -13,36 +13,19 @@ anime.timeline({loop: true})
         easing: "easeOutCirc",
         duration: 1000,
         delay: function(el, i) {
-            return 3000 * i;
+            return 1000 * i;
         }
     }).add({
     targets: '.ml15',
     opacity: 0,
     duration: 3000,
     easing: "easeOutExpo",
-    delay: 3000
+    delay: 1000
 });
 
-const baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost:5555' : 'https://more-art-than.science'
-
-fetch(`${baseURL}/api/session_challenge`,  {
-        method: 'GET',
-        credentials: 'include'
-    })
-    .then((response) => {
-        return response.json()
-    })
-    .then((resp) => {
-        init(resp.code === 'OK1')
-    }
+render(
+    <div id="app">
+        <App />
+    </div>,
+    document.body
 )
-
-
-const init = (goBerries) => {
-    render(
-        <div id="app">
-            <App showMain={goBerries} />
-        </div>,
-        document.body
-    )
-}
