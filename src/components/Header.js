@@ -6,8 +6,13 @@ import linkedIn from '../static/linkdin.svg'
 const Header = () => (
   <header className="header-container">
     <div className="row-1">
-        <div className="row i1-1"><Link href="/blog"><h5>BLOG</h5></Link></div>
-        <div className="i1-2">
+        <h1 className="ml15">
+            <span className="word">More</span>
+            <span className="word">Art</span>
+            <span className="word">Than</span>
+            <span className="word">Science</span>
+        </h1>
+        <div className="extra-info-container">
             <div className="text-container">
                 <h4>Welcome to M~A~T~S</h4>
                 <h5>Home of Hamish Clulee</h5>
@@ -25,8 +30,8 @@ const Header = () => (
     </div>
     <div className="row-2">
         <div className="row i2-1"><Link href="/work"><h5>WORK</h5></Link></div>
-        <div className="row i2-2"><Link href="/resume"><h5>RESUME</h5></Link></div>
-        <div className="row i2-3"><Link href="/tech"><h5>TECH</h5></Link></div>
+        <div className="row i2-2"><Link href="/blog"><h5>BLOG</h5></Link></div>
+        <div className="row i2-3"><Link href="/tech"><h5>IPSEITY</h5></Link></div>
     </div>
   </header>
 )
