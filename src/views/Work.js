@@ -17,6 +17,7 @@ module.exports = class Work extends Component {
                 <p>Brochureware and a Booking App, using Stripe for payments.</p>
             </div>
             <h4><Link href="/all-projects">Show All Projects</Link></h4>
+            <div className="footer-spacer"></div>
             <Footer />
         </div>;
     }
