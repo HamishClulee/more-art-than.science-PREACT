@@ -17,7 +17,7 @@ class Work extends Component {
             </div>
             <h4><Link href="/all-projects">Show All Projects</Link></h4>
             <div className="footer-spacer"></div>
-        </div>;
+        </div>
     }
 }
 

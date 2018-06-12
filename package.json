@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "npx parcel build index.html",
-    "dev": "bash ./run-dev.sh & parcel index.html",
+    "dev": "bash ./run-dev.sh & parcel index.html --no-cache --open",
     "deploy-local": "bash ./run-deploy-local.sh"
   },
   "author": "Hamish Clulee",

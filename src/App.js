@@ -4,6 +4,7 @@ import AsyncRoute from 'preact-async-route'
 
 // Views
 import Home from './views/Home'
+// import Blog from './views/Blog'
 
 const App = (props, state) => {
     return <div>

@@ -33,4 +33,22 @@ i
   cursor: pointer
   i
     color: #FF5722
-    font-size: 60px
+    font-size: 30px
+  &:hover
+    .hamburger-dropdown
+      visibility: visible
+      opacity: 1
+      transition: all 2s
+
+.hamburger-dropdown
+  visibility: hidden
+  opacity: 0
+  transition: all 2s
+  position: relative
+  background-color: white !important
+  z-index: 9999
+  right: 140px
+  a
+    color: black
+    h6
+      font-size: 1.8em

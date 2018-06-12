@@ -1,7 +1,6 @@
 import { h, render, Component } from 'preact'
 import anime from "animejs"
 import Hamburger from '../components/Hamburger'
-import AllProjects from "./AllProjects";
 
 class Blog extends Component {
 
@@ -20,21 +19,21 @@ class Blog extends Component {
 
     componentDidMount() {
 
-        this.wrapInSpans('.one')
-        this.wrapInSpans('.two')
-        this.wrapInSpans('.three')
-        this.wrapInSpans('.four')
-
-        anime.timeline({loop: false})
-        .add({
-            targets: '.ml16 .letter',
-            translateY: [-100, 0],
-            easing: "easeOutExpo",
-            duration: 2200,
-            delay: function(el, i) {
-                return 80 * i;
-            }
-        })
+        // this.wrapInSpans('.one')
+        // this.wrapInSpans('.two')
+        // this.wrapInSpans('.three')
+        // this.wrapInSpans('.four')
+        //
+        // anime.timeline({loop: false})
+        // .add({
+        //     targets: '.ml16 .letter',
+        //     translateY: [-100, 0],
+        //     easing: "easeOutExpo",
+        //     duration: 2200,
+        //     delay: function(el, i) {
+        //         return 80 * i;
+        //     }
+        // })
     }
 
     componentWillUnmount() {
