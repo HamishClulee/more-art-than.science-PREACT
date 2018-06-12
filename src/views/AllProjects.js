@@ -1,6 +1,6 @@
 import { h, render, Component } from 'preact';
 import Footer from '../components/Footer'
-module.exports = class AllProjects extends Component {
+class AllProjects extends Component {
     // Vue data
     constructor() {
         super();
@@ -28,3 +28,5 @@ module.exports = class AllProjects extends Component {
         </div>;
     }
 }
+
+export default AllProjects

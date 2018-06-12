@@ -1,6 +1,6 @@
 import { h, render, Component } from 'preact'
 
-module.exports = class BackIcon extends Component {
+module.exports = class Hamburger extends Component {
     // Vue data
     constructor() {
         super()
@@ -22,8 +22,8 @@ module.exports = class BackIcon extends Component {
 
     // Vue Template
     render(props, state) {
-        return <div className="back-icon-container" onClick={this.activateLasers}>
-            <i class="material-icons">skip_previous</i>
+        return <div className="hamburger-container" onClick={this.activateLasers}>
+            <i className="material-icons">menu</i>
         </div>
     }
 }

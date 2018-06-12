@@ -1,7 +1,9 @@
-import { h, render, Component } from 'preact';
-import anime from "animejs";
+import { h, render, Component } from 'preact'
+import anime from "animejs"
+import Hamburger from '../components/Hamburger'
+import AllProjects from "./AllProjects";
 
-module.exports = class Blog extends Component {
+class Blog extends Component {
 
     constructor() {
         super()
@@ -42,6 +44,7 @@ module.exports = class Blog extends Component {
     render(props, state) {
         return <div>
             <div className="blog-container">
+                <Hamburger />
                 <div className="blog left-column">
                     <h1 className="ml16 one">No</h1>
                     <h1 className="ml16 two">Posts</h1>
@@ -52,3 +55,5 @@ module.exports = class Blog extends Component {
         </div>;
     }
 }
+
+export default Blog

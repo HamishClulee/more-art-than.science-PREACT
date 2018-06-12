@@ -1,14 +1,17 @@
 import { h, render, Component } from 'preact'
-import Footer from '../components/Footer'
-import anime from "animejs";
+import anime from "animejs"
+import Hamburger from '../components/Hamburger'
+class Ipseity extends Component {
 
-module.exports = class Ipseity extends Component {
+    constructor() {
+        super()
+    }
 
     // Vue mounted
     componentDidMount() {
         anime.timeline({loop: false})
             .add({
-                targets: '.ml15 .word',
+                targets: '.ml17 .word',
                 scale: [14,1],
                 opacity: [0,1],
                 easing: "easeOutCirc",
@@ -21,14 +24,16 @@ module.exports = class Ipseity extends Component {
 
     render(props, state) {
         return <div className="page-container">
-            <h1 className="ml15">
+            <h3 className="ml17">
+                <Hamburger />
                 <span className="word">Soon</span>
                 <span className="word">Come</span>
                 <span className="word">Things</span>
                 <span className="word">of</span>
                 <span className="word">Interest</span>
-            </h1>
-            <Footer />
+            </h3>
         </div>;
     }
 }
+
+export default Ipseity
