@@ -2,7 +2,6 @@ import { h, render, Component } from 'preact'
 import { Link } from 'preact-router/match'
 import git from '../static/github.svg'
 import linkedIn from '../static/linkdin.svg'
-import anime from "animejs"
 
 module.exports = class Header extends Component {
 
