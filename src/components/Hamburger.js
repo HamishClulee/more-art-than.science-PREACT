@@ -17,7 +17,7 @@ class Hamburger extends Component {
             translateX: -15,
             translateY: 15,
             duration: 1000,
-            scale: 2.5
+            scale: 1.6
         })
     }
 
