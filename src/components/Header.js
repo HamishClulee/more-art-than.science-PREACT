@@ -23,12 +23,6 @@ module.exports = class Header extends Component {
                 return 1000 * i;
             }
         })
-
-        anime({
-            targets: '.row-2',
-            direction: 'alternate',
-            scale: 1.1
-        })
     }
 
     // Vue beforeDestroy
