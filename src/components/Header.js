@@ -24,7 +24,13 @@ module.exports = class Header extends Component {
             delay: function(el, i) {
                 return 1000 * i;
             }
-         })
+        })
+
+        anime({
+            targets: '.stickman',
+            translateX: 1900,
+            duration: 60000
+        })
     }
 
     // Vue beforeDestroy
@@ -54,6 +60,20 @@ module.exports = class Header extends Component {
                             <a href="https://www.linkedin.com/in/hamish-clulee-163b1950/" target="_blank" className="icon-container-item">
                                 <img src={linkedIn} height="30" />
                             </a>
+                        </div>
+                        <div className="person-container">
+                            <div className='stickman'>
+                                <div className='head'>
+                                    <div className='eye'></div>
+                                    <div className='mouth'></div>
+                                </div>
+                                <div className='body'>
+                                    <div className='arm' id='left'></div>
+                                    <div className='arm' id='right'></div>
+                                    <div className='leg' id='left'></div>
+                                    <div className='leg' id='right'></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

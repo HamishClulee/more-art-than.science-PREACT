@@ -40,3 +40,177 @@
   line-height: 1em;
   width: 60vw
 }
+
+$size: 20em;
+$speed: 1s;
+
+.stickman {
+  height: $size;
+  width: $size / 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -$size / 2;
+  margin-left: -$size / 4;
+  animation: $speed / 2 walk-body ease-in infinite;
+
+  .head {
+    height: $size / 4;
+    width: $size / 4;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    background-color: #111;
+    border-radius: 100%;
+
+    .eye {
+      height: $size / 32;
+      width: $size / 32;
+      position: absolute;
+      top: 32.5%;
+      right: 25%;
+      background: #fff;
+      border-radius: 100%
+    }
+
+    .mouth {
+      height: $size / 64;
+      width: $size / 14;
+      position: absolute;
+      bottom: 25%;
+      right: 0;
+      transform: rotate(11.25deg);
+      background-color: #fff
+    }
+  }
+
+  .body {
+    height: $size / 3;
+    width: $size / 32;
+    position: absolute;
+    top: $size / 4;
+    left: 50%;
+    margin-left: -$size / 64;
+    background-color: #111;
+
+    .arm {
+      height: $size / 4;
+      width: $size / 32;
+      position: absolute;
+      top: 0;
+      transform: rotate(-45deg);
+      transform-origin: top;
+      background: #111;
+      animation: $speed walk-arm infinite;
+
+      &#left {
+        animation-delay: $speed / 2;
+        background: #222;
+        &::after {
+          animation-delay: $speed / 2;
+          background: #222
+        }
+      }
+
+      &::after {
+        content: "";
+        height: $size / 6;
+        width: $size / 32;
+        position: absolute;
+        bottom: 0;
+        transform: rotate(90deg);
+        transform-origin: right bottom;
+        background: #111;
+        animation: $speed walk-arm-after infinite
+      }
+    }
+
+    .leg {
+      height: ($size - (($size / 4) + $size / 3)) / 2;
+      width: $size / 32;
+      position: absolute;
+      bottom: (-$size + (($size / 4) + $size / 3)) / 2;
+      transform: rotate(-90deg);
+      transform-origin: top;
+      background: #222;
+      animation: $speed walk-leg infinite;
+
+      &#right {
+        background: #111;
+        animation-delay: $speed / 2;
+
+        &::after {
+          background: #111;
+          animation-delay: $speed / 2
+        }
+      }
+
+      &::after {
+        content: "";
+        height: ($size - (($size / 4) + $size / 3)) / 2;
+        width: $size / 32;
+        position: absolute;
+        bottom: (-$size + (($size / 4) + $size / 3)) / 2;
+        transform: rotate(112.5deg);
+        transform-origin: top;
+        background: #222;
+        animation: $speed walk-leg-after infinite
+      }
+    }
+  }
+}
+
+@keyframes walk-body {
+  0% {
+    margin-top: -$size / 2 - $size / 16;
+    padding-bottom: $size / 16
+  } 50% {
+      margin-top: -$size / 2;
+      padding-bottom: 0
+    } 100% {
+        margin-top: -$size / 2 - $size / 16;
+        padding-bottom: $size / 16
+      }
+}
+
+@keyframes walk-arm {
+  0% {
+    transform: rotate(-45deg)
+  } 50% {
+      transform: rotate(45deg)
+    } 100% {
+        transform: rotate(-45deg)
+      }
+}
+
+@keyframes walk-arm-after {
+  0% {
+    transform: rotate(67.5deg)
+  } 50% {
+      transform: rotate(90deg)
+    } 100% {
+        transform: rotate(67.5deg)
+      }
+}
+
+@keyframes walk-leg {
+  0% {
+    transform: rotate(-90deg)
+  } 50% {
+      transform: rotate(45deg)
+    } 100% {
+        transform: rotate(-90deg)
+      }
+}
+
+@keyframes walk-leg-after {
+  0% {
+    transform: rotate(112.5deg)
+  } 25% {
+      transform: rotate(0deg)
+    } 50% {
+        transform: rotate(55deg)
+      } 100% {
+          transform: rotate(112.5deg)
+        }
+}
