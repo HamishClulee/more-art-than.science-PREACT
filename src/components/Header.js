@@ -13,28 +13,21 @@ module.exports = class Header extends Component {
 
     // Vue mounted
     componentDidMount() {
-        anime
-        .timeline({loop: false})
-        .add({
+        anime({
             targets: '.ml15 .word',
-            scale: [14,1],
-            opacity: [0,1],
+            scale: [14, 1],
+            opacity: [0, 1],
             easing: "easeOutCirc",
             duration: 1000,
-            delay: function(el, i) {
+            delay: function (el, i) {
                 return 1000 * i;
             }
         })
 
-        anime.timeline({loop: false}).add({
-            targets: '.stickman',
-            translateX: '76vw',
-            duration: 12000
-        })
-        .add({
-            targets: '.stickman',
-            opacity: 0,
-            duration: 4000
+        anime({
+            targets: '.row-2',
+            direction: 'alternate',
+            scale: 1.1
         })
     }
 
@@ -65,20 +58,6 @@ module.exports = class Header extends Component {
                             <a href="https://www.linkedin.com/in/hamish-clulee-163b1950/" target="_blank" className="icon-container-item">
                                 <img src={linkedIn} height="30" />
                             </a>
-                        </div>
-                    </div>
-                </div>
-                <div className="person-container">
-                    <div className='stickman'>
-                        <div className='head'>
-                            <div className='eye'></div>
-                            <div className='mouth'></div>
-                        </div>
-                        <div className='body'>
-                            <div className='arm' id='left'></div>
-                            <div className='arm' id='right'></div>
-                            <div className='leg' id='left'></div>
-                            <div className='leg' id='right'></div>
                         </div>
                     </div>
                 </div>

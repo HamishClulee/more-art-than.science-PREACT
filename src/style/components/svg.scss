@@ -42,12 +42,13 @@
 }
 
 $size: 10em;
-$speed: 1s;
+$speed: 0.5s;
 
 .stickman {
   height: $size;
   width: $size / 2;
   position: absolute;
+  border-bottom: .1em solid;
   top: 50%;
   left: 50%;
   margin-top: -$size / 2;
