@@ -28,9 +28,6 @@ class Ipseity extends Component {
                 <Hamburger />
                 <span className="word">Soon</span>
                 <span className="word">Come</span>
-                <span className="word">Things</span>
-                <span className="word">of</span>
-                <span className="word">Interest</span>
             </h3>
         </div>;
     }

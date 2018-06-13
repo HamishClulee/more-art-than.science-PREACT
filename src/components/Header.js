@@ -26,10 +26,15 @@ module.exports = class Header extends Component {
             }
         })
 
-        anime({
+        anime.timeline({loop: false}).add({
             targets: '.stickman',
-            translateX: 1900,
-            duration: 60000
+            translateX: '76vw',
+            duration: 12000
+        })
+        .add({
+            targets: '.stickman',
+            opacity: 0,
+            duration: 4000
         })
     }
 
@@ -61,19 +66,19 @@ module.exports = class Header extends Component {
                                 <img src={linkedIn} height="30" />
                             </a>
                         </div>
-                        <div className="person-container">
-                            <div className='stickman'>
-                                <div className='head'>
-                                    <div className='eye'></div>
-                                    <div className='mouth'></div>
-                                </div>
-                                <div className='body'>
-                                    <div className='arm' id='left'></div>
-                                    <div className='arm' id='right'></div>
-                                    <div className='leg' id='left'></div>
-                                    <div className='leg' id='right'></div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div className="person-container">
+                    <div className='stickman'>
+                        <div className='head'>
+                            <div className='eye'></div>
+                            <div className='mouth'></div>
+                        </div>
+                        <div className='body'>
+                            <div className='arm' id='left'></div>
+                            <div className='arm' id='right'></div>
+                            <div className='leg' id='left'></div>
+                            <div className='leg' id='right'></div>
                         </div>
                     </div>
                 </div>
