@@ -1,9 +1,8 @@
 import { h, render, Component } from 'preact'
 import Hamburger from '../components/Hamburger'
 import { route } from 'preact-router'
-import HashToMessageTable from '../store/Custom'
 
-const words = ['One', 'Two', 'Three', 'Four', 'Five', 'Monkeies', 'Attack', 'Civillians', 'times']
+import words from '../constants/words.js'
 
 class Ipseity extends Component {
 
@@ -32,7 +31,8 @@ class Ipseity extends Component {
 
     saveAndCreate () {
         var hash = this.generateHash()
-        HashToMessageTable[hash] = this.state.message
+
+        fetch('http://localhost:5555/set-magnet?hash=' + hash + '&message=' + encodeURIComponent(this.state.message))
         route('/magnets/' + hash)
     }
 
@@ -40,7 +40,7 @@ class Ipseity extends Component {
         function s4() {
             return Math.floor((1 + Math.random()) * 0x10000)
                 .toString(16)
-                .substring(1);
+                .substring(1)
         }
         return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4()
     }
@@ -50,7 +50,8 @@ class Ipseity extends Component {
             <div className="blog-container">
                 <Hamburger />
                 <div className="blog left-column">
-                    <h3>Fridge Magnets</h3>
+                    <h3>Fridge</h3>
+                    <h3>Magnets</h3>
                 </div>
                 <div className="blog right-column">
                     <div className="words-container">
@@ -59,7 +60,6 @@ class Ipseity extends Component {
                         }) }
                     </div>
                     <div className="sequence-container">
-                        <h1>Message Container</h1>
                         <div className="message-container">
                             { state.message.map(word => {
                                 return <span onClick={ () => this.removeWord(word) } className="word-item">{word}</span>
