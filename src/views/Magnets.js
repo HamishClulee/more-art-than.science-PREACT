@@ -1,5 +1,6 @@
 import { h, render, Component } from 'preact'
 import Hamburger from '../components/Hamburger'
+import baseURL from '../constants/utils'
 
 class Magnets extends Component {
 
@@ -9,8 +10,9 @@ class Magnets extends Component {
     }
 
     componentDidMount() {
-        var hash = window.location.href.split('/')[4]
-        fetch('http://localhost:5555/get-magnet?hash=' + encodeURIComponent(hash))
+        // var hash = window.location.href.split('/')[4]
+        //'http://localhost:5555/get-magnet?hash=' +
+        fetch(`${baseURL}/get-magnet?hash=${encodeURIComponent(window.location.href.split('/')[4])}`)
             .then(resp => {
                 return resp.json()
             })

@@ -3,6 +3,7 @@ import Hamburger from '../components/Hamburger'
 import { route } from 'preact-router'
 
 import words from '../constants/words.js'
+import baseURL from "../constants/utils";
 
 class Ipseity extends Component {
 
@@ -31,9 +32,8 @@ class Ipseity extends Component {
 
     saveAndCreate () {
         var hash = this.generateHash()
-
-        fetch('http://localhost:5555/set-magnet?hash=' + hash + '&message=' + encodeURIComponent(this.state.message))
-        route('/magnets/' + hash)
+        fetch(`${baseURL}/set-magnet?hash=${hash}&message=${encodeURIComponent(this.state.message)}`)
+        route(`/magnets/${hash}`)
     }
 
     generateHash () {
