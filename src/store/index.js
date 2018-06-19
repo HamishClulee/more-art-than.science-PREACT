@@ -1,23 +1,28 @@
 import model from 'parket'
 
-const Person = model('Person', {
+const Magnet = model('Magnet', {
     initial: () => ({
-        firstname: null,
-        lastname: null,
-        nested: null,
+        word: null
     }),
     actions: state => ({
-        setFirstName (first) {
-            state.firstname = first;
-        },
-        setLastName (last) {
-            state.lastname = last;
-        },
-        setNested (nested) {
-            state.nested = nested;
+        setWord (word) {
+            state.word = word;
         },
     }),
     views: state => ({
-        fullname: () => `${state.firstname} ${state.lastname}`,
+        showWord: () => `${state.word}`
+    })
+})
+
+const Sequence = model('Sequence',  {
+    initial: () => ({
+        message: null
     }),
-});
+    actions: state => ({
+        addWordToSequence(word) {
+            state.message.push(word)
+        }
+    })
+})
+
+export default Magnet

@@ -1,35 +1,77 @@
 import { h, render, Component } from 'preact'
-import anime from "animejs"
 import Hamburger from '../components/Hamburger'
+import { route } from 'preact-router'
+import HashToMessageTable from '../store/Custom'
+
+const words = ['One', 'Two', 'Three', 'Four', 'Five', 'Monkeies', 'Attack', 'Civillians', 'times']
+
 class Ipseity extends Component {
 
     constructor() {
         super()
+        this.state.words = words
+        this.state.message = []
     }
 
     // Vue mounted
     componentDidMount() {
-        anime.timeline({loop: false})
-            .add({
-                targets: '.ml17 .word',
-                scale: [14,1],
-                opacity: [0,1],
-                easing: "easeOutCirc",
-                duration: 1000,
-                delay: function(el, i) {
-                    return 1000 * i;
-                }
-            })
+
+    }
+
+    removeWord(word) {
+        this.setState({message: this.state.message.filter(function(p) {
+            return p !== word
+        })})
+    }
+
+    activateWord (word) {
+        this.setState({
+            message: [...this.state.message, word]
+        })
+    }
+
+    saveAndCreate () {
+        var hash = this.generateHash()
+        HashToMessageTable[hash] = this.state.message
+        route('/magnets/' + hash)
+    }
+
+    generateHash () {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4()
     }
 
     render(props, state) {
-        return <div className="page-container">
-            <h3 className="ml17">
+        return <div>
+            <div className="blog-container">
                 <Hamburger />
-                <span className="word">Soon</span>
-                <span className="word">Come</span>
-            </h3>
-        </div>;
+                <div className="blog left-column">
+                    <h3>Fridge Magnets</h3>
+                </div>
+                <div className="blog right-column">
+                    <div className="words-container">
+                        { state.words.map(word => {
+                            return <span onClick={ () => this.activateWord(word) } className="word-item">{word}</span>
+                        }) }
+                    </div>
+                    <div className="sequence-container">
+                        <h1>Message Container</h1>
+                        <div className="message-container">
+                            { state.message.map(word => {
+                                return <span onClick={ () => this.removeWord(word) } className="word-item">{word}</span>
+                            }) }
+                        </div>
+
+                        <button className="btn" onclick={ () => this.saveAndCreate() }>Save and Create new link</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     }
 }
 
