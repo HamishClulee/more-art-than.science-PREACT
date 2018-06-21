@@ -1,6 +1,21 @@
 import { h, render, Component } from 'preact'
 import Hamburger from '../components/Hamburger'
 import baseURL from '../constants/utils'
+import fridge from '../static/fridge.jpg'
+
+let style = {
+    backgroundImage: `url(${fridge})`,
+    height: '100vh',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover'
+}
+
+//     backgroundPosition: 'center',
+//     backgroundSize: '100vh 100vw',
+//     backgroundRepeat: 'no-repeat'
+
 
 class Magnets extends Component {
 
@@ -10,8 +25,6 @@ class Magnets extends Component {
     }
 
     componentDidMount() {
-        // var hash = window.location.href.split('/')[4]
-        //'http://localhost:5555/get-magnet?hash=' +
         fetch(`${baseURL}/get-magnet?hash=${encodeURIComponent(window.location.href.split('/')[4])}`)
             .then(resp => {
                 return resp.json()
@@ -23,7 +36,7 @@ class Magnets extends Component {
 
     render(props, state) {
         return <div>
-            <div className="page-container">
+            <div className="fridge-container" style={ style }>
                 <Hamburger />
                 <div className="message-container">
                     { state.message.map(word => {
