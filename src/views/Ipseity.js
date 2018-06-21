@@ -2,14 +2,14 @@ import { h, render, Component } from 'preact'
 import Hamburger from '../components/Hamburger'
 import { route } from 'preact-router'
 
-import words from '../constants/words.js'
-import baseURL from "../constants/utils";
+import { words, shuffle } from '../constants/words.js'
+import baseURL from "../constants/utils"
 
 class Ipseity extends Component {
 
     constructor() {
         super()
-        this.state.words = words
+        this.state.words = shuffle(words).slice(0, 150)
         this.state.message = []
     }
 
