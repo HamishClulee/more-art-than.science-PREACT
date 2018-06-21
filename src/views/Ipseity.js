@@ -11,6 +11,7 @@ class Ipseity extends Component {
         super()
         this.state.words = shuffle(words).slice(0, 150)
         this.state.message = []
+        this.state.errorText = ''
     }
 
     // Vue mounted
@@ -25,9 +26,16 @@ class Ipseity extends Component {
     }
 
     activateWord (word) {
-        this.setState({
-            message: [...this.state.message, word]
-        })
+        if (this.state.message.length < 15) {
+            this.setState({
+                message: [...this.state.message, word]
+            })
+        } else {
+            this.setState({
+                errorText: 'Sorry, only 15 words max!'
+            })
+        }
+
     }
 
     saveAndCreate () {
@@ -47,21 +55,20 @@ class Ipseity extends Component {
 
     render(props, state) {
         return <div>
-            <div className="blog-container">
+            <div className="ipseity-container">
                 <Hamburger />
-                <div className="blog left-column">
-                    <h3>Fridge</h3>
-                    <h3>Magnets</h3>
-                </div>
-                <div className="blog right-column">
-                    <h6 className="magnets-header">Click a magnet to add it to the list, once finished click the save button for a shareable link!</h6>
+                <div>
+                    <h2 className="magnets-main-header">Welcome to Fridge Magnets! Another way to waste time on the internet with your freinds!</h2>
+                    <h4 className="magnets-header">Click a magnet to add it to the list, once finished click the save button for a shareable link!</h4>
                     <div className="words-container">
                         { state.words.map(word => {
                             return <span onClick={ () => this.activateWord(word) } className="word-item">{word}</span>
                         }) }
                     </div>
                     <div className="sequence-container">
-                        <div className="message-container">
+                        <h4 className="magnets-header">To go on the fridge!</h4>
+                        <h4 className="magnets-error-text"> { state.errorText } </h4>
+                        <div className="message-container-ipseity">
                             { state.message.map(word => {
                                 return <span onClick={ () => this.removeWord(word) } className="word-item">{word}</span>
                             }) }
