@@ -54,6 +54,7 @@ class Ipseity extends Component {
                     <h3>Magnets</h3>
                 </div>
                 <div className="blog right-column">
+                    <h6 className="magnets-header">Click a magnet to add it to the list, once finished click the save button for a shareable link!</h6>
                     <div className="words-container">
                         { state.words.map(word => {
                             return <span onClick={ () => this.activateWord(word) } className="word-item">{word}</span>
