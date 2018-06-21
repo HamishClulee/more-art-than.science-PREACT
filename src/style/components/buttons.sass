@@ -8,13 +8,13 @@ $button-padding: 0 16px !default
 $button-radius: 2px !default
 
 // Raised buttons
-$button-raised-background: $secondary-color !default
+$button-raised-background: $primary-color !default
 $button-raised-background-hover: lighten($button-raised-background, 5%) !default
 $button-raised-color: #fff !default
 
 // Large buttons
 $button-large-font-size: 15px !default
-$button-large-icon-font-size: 1.6rem !default
+$button-large-icon-font-size: 2.3rem !default
 $button-large-height: $button-height * 1.5 !default
 $button-floating-large-size: 56px !default
 
@@ -47,7 +47,8 @@ $button-floating-radius: 50% !default
 
 // shared styles
 .btn,
-.btn-flat 
+.btn-flat
+  background-color: $primary-color
   border: $button-border
   border-radius: $button-radius
   display: inline-block

@@ -9,14 +9,13 @@ class Ipseity extends Component {
 
     constructor() {
         super()
-        this.state.words = shuffle(words).slice(0, 150)
+        this.state.words = shuffle(words).slice(0, 145)
         this.state.message = []
         this.state.errorText = ''
     }
 
     // Vue mounted
     componentDidMount() {
-
     }
 
     removeWord(word) {
@@ -58,15 +57,15 @@ class Ipseity extends Component {
             <div className="ipseity-container">
                 <Hamburger />
                 <div>
-                    <h2 className="magnets-main-header">Welcome to Fridge Magnets! Another way to waste time on the internet with your freinds!</h2>
-                    <h4 className="magnets-header">Click a magnet to add it to the list, once finished click the save button for a shareable link!</h4>
+                    <h2 className="magnets-main-header">Welcome to Fridge Haiku! Another way to waste time on the internet with your freinds!</h2>
+                    <h4 className="magnets-header">Click a magnet to add it to the list, once finished click the save button for a shareable link! Most of them will not be haiku's, dont sweat it!</h4>
                     <div className="words-container">
                         { state.words.map(word => {
                             return <span onClick={ () => this.activateWord(word) } className="word-item">{word}</span>
                         }) }
                     </div>
                     <div className="sequence-container">
-                        <h4 className="magnets-header">To go on the fridge!</h4>
+                        <h4 className="magnets-header">Your Fridge Haiku so far....</h4>
                         <h4 className="magnets-error-text"> { state.errorText } </h4>
                         <div className="message-container-ipseity">
                             { state.message.map(word => {
@@ -74,7 +73,7 @@ class Ipseity extends Component {
                             }) }
                         </div>
 
-                        <button className="btn" onclick={ () => this.saveAndCreate() }>Save and Create new link</button>
+                        <button className="btn btn-large haiku-action" onclick={ () => this.saveAndCreate() }>Done! Give me a shareable link!</button>
                     </div>
                 </div>
             </div>
