@@ -1,7 +1,7 @@
 .words-container
   display: flex
   flex-direction: row
-  margin: 1em 0em
+  margin: 1em 0em 25vh 0em
   width: 50vw
   flex-flow: wrap
   @media (min-width: 0px)
@@ -16,11 +16,12 @@
   margin: 0.5em
   border: 1px solid #adadad
   box-shadow: 0 5px 1px 0 rgba(0,0,0, 1)
-  border-radius: 5px
+  border-radius: 2px
   cursor: pointer
   font-size: 1.2em
   font-family: $heading-font
   background-color: white
+  //transform: rotate(2deg)
   @media (min-width: 0px)
     font-size: 12px
   @media (min-width: 480px)
@@ -31,6 +32,15 @@
 .sequence-container
   display: flex
   flex-direction: column
+  position: fixed
+  top: 60vh
+  background-color: white
+  z-index: 9999
+  width: 100vw
+  overflow: hidden
+  box-shadow: 0 -5px 2px -5px rgba(0,0,0, 1)
+  height: 40vh
+
 
 .message-container
   display: flex
@@ -47,7 +57,10 @@
   @media (min-width: 960px)
     margin: 550px 60px 0 60px
     width: 500px
-
+  //&:nth-child(1, 1)
+  //  transform: rotate(random(3))
+  //&:nth-child(even, 1)
+  //  transform: rotate(-4deg)
 
 .message-container-ipseity
   display: flex
@@ -76,6 +89,15 @@
 .magnets-error-text
   color: royalblue
   font-style: italic
+  @media (min-width: 0px)
+    font-size: 12px
+  @media (min-width: 480px)
+    font-size: 15px
+  @media (min-width: 960px)
+    font-size: 18px
 
 .haiku-action
   margin: 30px
+  position: fixed
+  bottom: 1vh
+  right: 1vh

@@ -1,0 +1,62 @@
+$colorList: ();
+$newColorList: ();
+
+$h: null;
+$s: null;
+$l: null;
+$s-min: 20;
+$s-max: 70;
+$l-min: 30;
+$l-max: 90;
+
+@for $l from 1 through 10 {
+  $h: random(6);
+  $colorList: append($colorList, $h, comma);
+}
+
+
+@debug "#{$colorList}";
+// delete the item at given index, which can be nagative
+// @return {list}
+//@function delete-at($list, $index) {
+//  $length: length($list);
+//  // convert negative index to positive index
+//  $idx: if($index < 0, $length + 1 + $index, $index);
+//  // index out of range
+//  @if $idx <= 0 or $idx > $length {
+//    @warn 'index out of range: #{$index}';
+//    @return $list;
+//  }
+//  // create a new list
+//  $result: ();
+//  $i: 1;
+//  @while $i <= $length {
+//    @if $i != $index {
+//      $result: append($result, nth($list, $i));
+//    }
+//    $i: $i + 1;
+//  }
+//  @return $result;
+//}
+//
+//$j: null;
+//
+//@function shuffle($newColorList) {
+//  @for $i from 1 through 20 {
+//    $j: random(length($colorList));
+//    $newColorList: append($newColorList, nth($colorList, $j), comma);
+//    $colorList: delete-at($colorList, $j);
+//  }
+//  @return $newColorList;
+//}
+//
+//$colors: shuffle($newColorList);
+//
+//@for $k from 1 through 20 {
+//  .word-item:nth-of-type(#{$k}) {
+//    transform: rotate(nth($colors, $k));
+//  }
+//  .word-item:nth-of-type(#{$k})::after {
+//    transform: rotate(nth($colors, $k));
+//  }
+//}

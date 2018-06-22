@@ -25,13 +25,13 @@ class Ipseity extends Component {
     }
 
     activateWord (word) {
-        if (this.state.message.length < 15) {
+        if (this.state.message.length < 10) {
             this.setState({
                 message: [...this.state.message, word]
             })
         } else {
             this.setState({
-                errorText: 'Sorry, only 15 words max!'
+                errorText: '10 words max!'
             })
         }
 
@@ -44,7 +44,7 @@ class Ipseity extends Component {
     }
 
     generateHash () {
-        function s4() {
+        let s4 = () => {
             return Math.floor((1 + Math.random()) * 0x10000)
                 .toString(16)
                 .substring(1)
@@ -57,7 +57,7 @@ class Ipseity extends Component {
             <div className="ipseity-container">
                 <Hamburger />
                 <div>
-                    <h2 className="magnets-main-header">Welcome to Fridge Haiku! Another way to waste time on the internet with your freinds!</h2>
+                    <h2 className="magnets-main-header">Welcome to Fridge Haiku! Another way to waste time on the internet!</h2>
                     <h4 className="magnets-header">Click a magnet to add it to the list, once finished click the save button for a shareable link! Most of them will not be haiku's, dont sweat it!</h4>
                     <div className="words-container">
                         { state.words.map(word => {
@@ -73,7 +73,7 @@ class Ipseity extends Component {
                             }) }
                         </div>
 
-                        <button className="btn btn-large haiku-action" onclick={ () => this.saveAndCreate() }>Done! Give me a shareable link!</button>
+                        <button className="btn btn-small haiku-action" onclick={ () => this.saveAndCreate() }>Share</button>
                     </div>
                 </div>
             </div>
