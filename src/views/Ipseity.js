@@ -77,7 +77,6 @@ class Ipseity extends Component {
                     </div>
                 </div>
             </div>
-
         </div>
     }
 }

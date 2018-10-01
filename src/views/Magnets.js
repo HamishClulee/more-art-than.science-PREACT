@@ -12,11 +12,6 @@ let style = {
     backgroundSize: 'cover'
 }
 
-//     backgroundPosition: 'center',
-//     backgroundSize: '100vh 100vw',
-//     backgroundRepeat: 'no-repeat'
-
-
 class Magnets extends Component {
 
     constructor() {
