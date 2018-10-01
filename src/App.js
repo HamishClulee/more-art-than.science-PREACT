@@ -20,7 +20,7 @@ const App = (props, state) => {
                 path="/work"
                 getComponent={ () => import('./views/Work.js').then(module => module.default)}/>
             <AsyncRoute
-                path="/blog"
+                path="/words"
                 getComponent={ () => import('./views/Blog.js').then(module => module.default)}/>
             <AsyncRoute
                 path="/all-projects"
