@@ -4,10 +4,9 @@ import AsyncRoute from 'preact-async-route'
 
 // Views
 import Home from './views/Home'
-// import Blog from './views/Blog'
 
 const App = (props, state) => {
-    return <div>
+    return <div className="god-div">
         <Router>
             <Home path="/" />
             <AsyncRoute
@@ -21,13 +20,26 @@ const App = (props, state) => {
                 getComponent={ () => import('./views/Work.js').then(module => module.default)}/>
             <AsyncRoute
                 path="/words"
-                getComponent={ () => import('./views/Blog.js').then(module => module.default)}/>
+                getComponent={ () => import('./views/Words.js').then(module => module.default)}/>
             <AsyncRoute
                 path="/all-projects"
                 getComponent={ () => import('./views/AllProjects.js').then(module => module.default)}/>
             <AsyncRoute
                 path="/magnets/:id"
                 getComponent={ () => import('./views/Magnets.js').then(module => module.default)}/>
+            <AsyncRoute
+                path="/tinybanana"
+                getComponent={ () => import('./views/posts/tinyb.js').then(module => module.default)}/>
+            <AsyncRoute
+                path="/stolencars"
+                getComponent={ () => import('./views/posts/stolencars.js').then(module => module.default)}/>
+
+            {/*<AsyncRoute*/}
+                {/*path="/whatsgood"*/}
+                {/*getComponent={ () => import('./views/posts/good.js').then(module => module.default)}/>*/}
+            {/*<AsyncRoute*/}
+                {/*path="/interview-a-towel"*/}
+                {/*getComponent={ () => import('./views/posts/jonathan.js').then(module => module.default)}/>*/}
         </Router>
     </div>
 }

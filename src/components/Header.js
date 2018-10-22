@@ -58,7 +58,7 @@ module.exports = class Header extends Component {
             </div>
             <div className="row-2">
                 <div className="row i2-1"><Link href="/work"><h5>WORK</h5></Link></div>
-                <div className="row i2-2"><Link href="/blog"><h5>BLOG</h5></Link></div>
+                <div className="row i2-2"><Link href="/words"><h5>WORDS</h5></Link></div>
                 <div className="row i2-3"><Link href="/ipseity"><h5>IPSEITY</h5></Link></div>
             </div>
         </header>;
