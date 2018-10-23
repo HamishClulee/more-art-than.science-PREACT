@@ -1,5 +1,6 @@
 import { h, render, Component } from 'preact'
 import Hamburger from '../../components/Hamburger'
+import towel from '../../static/download.jpeg'
 
 class Jonathan extends Component {
     // Vue data
@@ -22,6 +23,9 @@ class Jonathan extends Component {
         return <div className="blog-post-container">
             <Hamburger />
             <h1>I SPEAK WITH JONATHAN, A 28 YEAR OLD BATH TOWEL.</h1>
+            <div className="tinyb-container">
+                <img src={towel} />
+            </div>
             <p>Jonathan isn't much to look at. At 28 (in towel years) he is your average bath towel. He's white,
                 and let's face it, that's a bonus, but other than that he's run of the mill, relaxed, clean
                 but not pristine.<br /><br />

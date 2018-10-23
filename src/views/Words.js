@@ -21,8 +21,9 @@ class Words extends Component {
                 <Hamburger />
                 <h5><Link href="/tinybanana" className="blog-post-link">HEY CUTE BANANA!</Link></h5>
                 {/*<h5><Link href="/whatsgood" className="blog-post-link">WHATS REALLY GOOD?</Link></h5>*/}
-                {/*<h5><Link href="/interview-a-towel" className="blog-post-link">AN INTERVIEW WITH A BATH TOWEL.</Link></h5>*/}
                 <h5><Link href="/stolencars" className="blog-post-link">DRIVING STOLEN CARS (NOT CLICK BAIT)</Link></h5>
+                <h5><Link href="/interview-a-towel" className="blog-post-link">AN INTERVIEW WITH A BATH TOWEL</Link></h5>
+
             </div>
         </div>
     }
