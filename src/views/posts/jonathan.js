@@ -32,7 +32,7 @@ class Jonathan extends Component {
                 His attitude is laconic.&nbsp;<br /><br />
                 "Yeah bath towel isn't bad, it has its ups and downs, but yeah I guess I'm a happy towel."<br /><br />
                 We met in a 4 star Noosa hotel where he has spent most of his life.<br /><br />
-                "All us Bathies star in 5 star, straight out the factory, fresh and clean, those were the days,
+                "All us Bathies start in 5 star, straight out the factory, fresh and clean, those were the days,
                 I once dried Anglelina Jolies.... well, you know!"<br /><br />
                 For a moment he looks a little alive, but it fades fast as he slips into more dolcit tones...<br /><br />
                 "We are all from Thailand, I don't have a passport or anything, but that's where me and my brother and
