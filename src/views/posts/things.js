@@ -1,6 +1,6 @@
 import { h, render, Component } from 'preact'
 import Hamburger from '../../components/Hamburger'
-import towel from '../../static/garry.jpg'
+import towel from '../../static/murica.jpg'
 
 class Things extends Component {
     // Vue data

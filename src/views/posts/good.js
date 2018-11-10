@@ -38,9 +38,6 @@ class Good extends Component {
                 But somewhere in this plethora of noise and landslide of proud and tiny tragedies there lies a kind of
                 wisdom. Running around heavy armed with foot guns and scissors teaches a amazing level of foolhardiness.
                 We are all jolly green giants wandering the earth...&nbsp;<br /><br />
-                Ask me what's next?<br />
-                Ask me where and when?<br />
-                Ask me what's good?<br /><br />
                 Anyway, I'm hanging with Garry, busy with normalising our adventures through the windshield.</p>
                 <p>This is ridiculously unfinished. Welcome to the Terradome.</p>
         </div>
