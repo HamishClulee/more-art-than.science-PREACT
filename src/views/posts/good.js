@@ -1,5 +1,6 @@
 import { h, render, Component } from 'preact'
 import Hamburger from '../../components/Hamburger'
+import towel from '../../static/garry.jpg'
 
 class Good extends Component {
     // Vue data
@@ -21,7 +22,10 @@ class Good extends Component {
     render(props, state) {
         return <div className="blog-post-container">
             <Hamburger />
-            <h1>WHATS REALLY GOOD?</h1>
+            <h1>WHATS GOOD?</h1>
+            <div className="tinyb-container">
+                <img src={towel} />
+            </div>
             <p>I mean, what defines good?<br /><br />
                 Personally, I tend to oscillate between two states; that would be good, and... it's not actually that good.<br /><br />
                 Life as a human pin ball is an acquired taste. It's like Douglas Adams said...<br /><br />
@@ -37,8 +41,8 @@ class Good extends Component {
                 Ask me what's next?<br />
                 Ask me where and when?<br />
                 Ask me what's good?<br /><br />
-                Don't wait for the answer though, I'll be busy with normalising my adventures through the windshield.
-                You don't need the answer though buddy, you already know.</p>
+                Anyway, I'm hanging with Garry, busy with normalising our adventures through the windshield.</p>
+                <p>This is ridiculously unfinished. Welcome to the Terradome.</p>
         </div>
     }
 }

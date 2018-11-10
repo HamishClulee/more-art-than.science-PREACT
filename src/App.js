@@ -34,9 +34,9 @@ const App = (props, state) => {
                 path="/stolencars"
                 getComponent={ () => import('./views/posts/stolencars.js').then(module => module.default)}/>
 
-            {/*<AsyncRoute*/}
-                {/*path="/whatsgood"*/}
-                {/*getComponent={ () => import('./views/posts/good.js').then(module => module.default)}/>*/}
+            <AsyncRoute
+                path="/whatsgood"
+                getComponent={ () => import('./views/posts/good.js').then(module => module.default)}/>
             <AsyncRoute
                 path="/interview-a-towel"
                 getComponent={ () => import('./views/posts/jonathan.js').then(module => module.default)}/>
