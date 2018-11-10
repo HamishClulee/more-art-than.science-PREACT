@@ -23,7 +23,7 @@ class Words extends Component {
                 {/*<h5><Link href="/whatsgood" className="blog-post-link">WHATS REALLY GOOD?</Link></h5>*/}
                 <h5><Link href="/stolencars" className="blog-post-link">DRIVING STOLEN CARS (NOT CLICK BAIT)</Link></h5>
                 <h5><Link href="/interview-a-towel" className="blog-post-link">AN INTERVIEW WITH A BATH TOWEL</Link></h5>
-
+                <h5><Link href="/things" className="blog-post-link">COOL, THING</Link></h5>
             </div>
         </div>
     }
