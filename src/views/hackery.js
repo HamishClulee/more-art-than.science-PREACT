@@ -1,8 +1,8 @@
 import { h, render, Component } from 'preact'
 import Hamburger from '../components/Hamburger'
-import one from '../static/statistics.svg'
+import one from '../static/statistics.png'
 import two from '../static/stats.png'
-import three from '../static/logo.svg'
+import three from '../static/logo.png'
 
 class Hackery extends Component {
     // Vue data
